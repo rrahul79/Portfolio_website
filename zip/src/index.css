@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: #050505;
+  color: #a1a1aa;
+}
+
+/* Minimalist Dark Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000; 
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46; 
+}
+
+/* Minimal Utilities */
+@layer components {
+  .glass-card {
+    @apply bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-3xl transition-all duration-300;
+  }
+  .glass-card:hover {
+    @apply border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.02)];
+  }
+  .neon-text {
+    @apply text-white font-display tracking-tight font-medium;
+  }
+  .section-heading {
+    @apply text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold flex items-center gap-2;
+  }
+}
